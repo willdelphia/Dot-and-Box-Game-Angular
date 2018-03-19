@@ -1,0 +1,32 @@
+ //using JSON functions to create a new copy of the map
+            let cloneControlObj = JSON.parse(JSON.stringify(this.barControlObject));
+            
+            cloneControlObj[barId].filled = true;
+
+            let cloneOpenBars = [];
+
+            for (let cloneBarId in cloneControlObj) {
+             let filledCheck =  cloneControlObj[cloneBarId].filled;
+             if(!filledCheck) {
+              cloneOpenBars.push(cloneBarId);
+             }
+            }
+
+            console.log('openbars');
+            console.log(cloneOpenBars);
+
+            let hits = [];
+            cloneOpenBars.forEach((checkBarId) => {
+              let checkthis = this.checkForBoxPlays(checkBarId, cloneControlObj);
+              if(checkthis > 0) { 
+                hits.push(checkBarId); 
+              }
+            });
+
+            console.log('hits:');
+            console.log(hits);
+
+            if(hits.length === 0) {
+              scoreSheet[barId] = 0;
+            }
+            

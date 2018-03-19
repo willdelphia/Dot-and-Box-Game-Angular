@@ -11,4 +11,10 @@ export class HomePage {
 
   }
 
+  navToGamePage() {
+
+  this.navCtrl.push('GamePage');
+
+}
+
 }

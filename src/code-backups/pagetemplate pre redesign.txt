@@ -1,0 +1,74 @@
+
+<!--
+  Generated template for the GamePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Dot and Box Game</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+  <div class="board" *ngIf="barControlObject && squareControlObject"> 
+    <div class="row" *ngFor="let row of rowArray">
+      <div class="column" *ngFor="let column of columnArray">
+        <div class="h-row"> 
+          <div id="dot{{row}}-{{column}}" class="dot"></div>
+          <div 
+            class="h-bar" 
+            [ngClass]="{'lastPlay': barControlObject[row + '-' + column + '--' + row + '-' + (column+1)]['lastPlay']}"
+            [style.background]="(barControlObject[row + '-' + column + '--' + row + '-' + (column+1)]) ? barControlObject[row + '-' + column + '--' + row + '-' + (column+1)]['background'] : ''" 
+            id="{{row}}-{{column}}--{{row}}-{{column+1}}" 
+            *ngIf="column !== (columnArray.length -1)"
+            (click)="clickBar(row + '-' + column + '--' + row + '-' + (column+1),0)"
+            >
+          <div class="h-clicker"></div>
+          </div>
+        </div>
+        <div class="v-row" *ngIf="row !== (rowArray.length -1)">
+          <div 
+            class="v-bar" 
+            id="{{row}}-{{column}}--{{row+1}}-{{column}}"
+            [ngClass]="{'lastPlay': barControlObject[row + '-' + column + '--' + (row + 1) + '-' + column]['lastPlay']}"
+            [style.background]="(barControlObject[row + '-' + column + '--' + (row + 1) + '-' + column]) ? barControlObject[row + '-' + column + '--' + (row + 1) + '-' + column]['background'] : ''"
+            (click)="clickBar(row + '-' + column + '--' + (row + 1) + '-' + column,0)"
+            >
+            <div class="v-clicker"></div>
+          </div>
+          <div class="square"
+            id="square{{row}}-{{column}}"
+            [style.background]="(squareControlObject[row + '-' + column]) ? squareControlObject[row + '-' + column]['background'] : ''"
+            *ngIf="column !== (columnArray.length -1)"
+           ></div>
+        </div> 
+      </div> <!-- column for --> 
+    </div> <!-- row for -->
+  </div> <!-- board -->
+  
+  <div class="turn-indicator">
+   <h2>  Whose turn is it? </h2>
+  
+   <ng-container  *ngFor="let player of playerArray" >
+      <div class="turnBox" *ngIf="turn === player.playerIndex" [style.background]="player.playerColor">
+          {{player.playerName}}
+      </div>
+    </ng-container>
+  
+  <h2>  What's the score? </h2>
+  <p *ngFor="let player of playerArray"> 
+    {{player.playerName}}: {{player.points}}
+  </p>
+  </div>
+<br><br>
+  
+  </ion-content>
+  
+  
+  
