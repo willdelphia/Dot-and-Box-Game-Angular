@@ -21,13 +21,13 @@ export class GamePage {
     {
       playerIndex: 0,
       playerName: 'Human',
-      playerColor: 'rgb(255, 0, 238)',
+      playerColor: 'rgb(203, 2, 189)',
       points: 0
     },
     {
       playerIndex: 1,
       playerName: 'Computer',
-      playerColor: 'rgb(0, 255, 51)',
+      playerColor: 'rgb(1, 169, 199)',
       points: 0
     },
   ];

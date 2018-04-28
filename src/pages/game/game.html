@@ -5,7 +5,15 @@
   Ionic pages and navigation.
 -->
   
+
+
 <ion-content>
+  <header>
+    <h1>Dot and Box Game</h1>
+    Coded by Will Delphia
+  </header>
+
+  <section id="gameBoard">
 
   <ion-grid class="no-padding">
     <ion-row>
@@ -63,8 +71,35 @@
       </div> <!-- board -->
     </ion-col>
   </ion-row>
+
     
   </ion-grid>
+
+</section>
+<section id="rules">
+  <div class="rulesInner textBody">
+    <h1>Rules</h1>
+      <div class="rule">
+        Click on the space between two dots to create a line. 
+      </div> 
+      <div class="rule">
+          When you complete all four sides of a square you claim that square and get a point. 
+      </div> 
+      <div class="rule">
+          If you claim a square you take another turn.
+        </div> 
+      <div class="rule">
+          When there are no more lines to draw the game is over and the player with the most points wins. 
+      </div> 
+  </div>
+</section>
+<section id="source">
+  <div class="rulesInner textBody">
+    <h1>Source</h1>
+    <p>This was an experimental project in my ongoing mission of learning Javascript, Angular, and Ionic. </p>
+     <p>Check out the  <a href="https://github.com/willdelphia/Dot-and-Box-Game"> code on github</a> and feel free to offer feedback or suggestions!</p>
+  </div>
+</section>
 
 </ion-content>
   

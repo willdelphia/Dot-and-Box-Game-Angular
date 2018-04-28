@@ -1,6 +1,39 @@
-page-game {
+$darkBg: rgb(43, 48, 53);
+$lessDarkBG: rgb(59, 65, 72);
+
+header {
+    text-align: center;
+    padding: 2em 0;
+    background: $darkBg;
+    color: white;
 
 }
+
+h1 {
+
+    margin-top: 0 !important;
+    font-family: lemon;
+    font-size: 40px;
+}
+
+p{
+    line-height: 1.5em;
+    font-size: 20px;
+}
+
+* {
+    font-family: railway;
+
+}
+
+a {
+    color: rgb(203, 2, 189);
+
+}
+
+
+
+
 
 .board {
    display: inline-block;
@@ -53,9 +86,7 @@ page-game {
 
 }
 
-// .h-bar:hover, .v-bar:hover {
-//     background-color: rgba(0,0,0,.2) !important;
-// }
+
 
 .h-clicker ,.v-clicker  {
     height: 16px;
@@ -125,11 +156,11 @@ float: right;
 
 
 .color {
-   color: rgb(0, 255, 51);
+   color: rgb(1, 169, 199);
 }
 
 .color {
-    color: rgb(255, 0, 238);
+    color: rgb(203, 2, 189);
  }
 
  
@@ -146,3 +177,38 @@ float: right;
       background-color: rgb(255, 119, 0);
     }
   }
+
+ 
+#rules {
+    background: $darkBg;
+    color: white;
+}
+
+#gameBoard {
+    padding-bottom: 40px;
+}
+
+#source {
+    background: $lessDarkBG;
+    color: white;
+ 
+}
+
+#rules, #source {
+    padding: 3rem ;
+
+}
+
+.textBody{
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+}
+
+.rule {
+    background: transparent;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
